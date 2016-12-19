@@ -1,11 +1,4 @@
-class Node:
-    def __init__(self, val):
-        self.left = None
-        self.right = None
-        self.val = val
-
-    def __str__(self):
-        return "Node({})".format(self.val)
+from util import TreeNode
 
 
 def print_node(root, dis):
@@ -23,7 +16,7 @@ def find(cur, t, x):
     if cur is None:
         return False, 0
     if cur is not None:
-        if cur.val == t.val:
+        if cur.value == t.value:
             return True, 0
         else:
             l, lc = find(cur.left, t, x)
@@ -41,30 +34,12 @@ def find(cur, t, x):
         return False, 0
 
 
-def construct(preorder):
-    if len(preorder) == 0:
-        return None
-    preorder = [Node(v) for v in preorder]
-    s = []
-    s.append(preorder[0])
-    i = 1
-    while i < len(preorder):
-        top = s[-1]
-        node = preorder[i]
-        if node.val < top.val:
-            top.left = node
-        else:
-            while len(s) != 0 and s[-1].val < node.val:
-                parent = s.pop()
-            parent.right = node
-        s.append(node)
-        i += 1
-    return preorder[0]
 
 
 def main():
-    root = construct([20, 10, 5, 1, 7, 15, 30, 25, 35, 32, 40])
-    find(root, Node(5), 3)
+    root = TreeNode.construct_BST([20, 10, 5, 1, 7, 15, 30, 25, 35, 32, 40])
+    root.print_tree()
+    find(root, TreeNode(5), 5)
 
 if __name__ == '__main__':
     main()
