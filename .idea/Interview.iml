@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CTCI" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Leetcode" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/random" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
